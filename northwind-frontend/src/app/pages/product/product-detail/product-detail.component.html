@@ -1,0 +1,43 @@
+
+  
+
+
+
+
+<div class="card border-light mb-3 col-md-6" >
+  <div class="card-header">    <h5 class="card-title">Product Details </h5>
+  </div>
+  <div class="card-body">
+  
+    <table class="table">
+      <tr>
+        <th>Product Id:</th>
+        <td>{{product.productId}}</td>
+      </tr>
+      <tr>
+        <th>Product Name:</th>
+        <td> {{product.productName}}</td>
+      </tr>
+      <tr>
+        <th>Category Id:</th>
+        <td> {{product.categoryId}}</td>
+      </tr>
+      <tr>
+        <th>Quantity Per Unit</th>
+        <td>{{product.quantityPerUnit}}</td>
+      </tr>
+      <tr>
+        <th>Unit Price</th>
+        <td> {{product.unitPrice}}</td>
+      </tr>
+      <tr>
+        <th>Units In Stock</th>
+        <td> {{product.unitsInStock}}</td>
+      </tr>
+    </table>
+  </div>
+  <div class="card-footer">
+
+    <button type="submit" routerLink="/product" class="btn btn-outline-danger btn-round" >Back to list</button>
+  </div>
+</div>

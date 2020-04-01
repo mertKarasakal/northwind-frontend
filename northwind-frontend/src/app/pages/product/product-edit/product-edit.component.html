@@ -1,0 +1,64 @@
+
+<div class="col-md-12">
+    <div class="card card-user">
+      <div class="image">
+        <img src="assets/img/header.jpg" alt="...">
+      </div>
+      <div class="card-header">
+        <h5 class="card-title">Edit Product </h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="editForm" (ngSubmit)="update()">
+
+            <div class="hidden">
+                <!-- <input type="text" formControlName="productId" placeholder="productId" name="productId" class="form-control" id="productId"> -->
+              </div>
+          <div class="row">
+            
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Product Name</label>
+                <input id="productName" name="productName" type="text" formControlName="productName"  class="form-control" placeholder=" " value="">
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label for="exampleInputEmail1">Category</label>
+                <input type="number"  id="categoryId" name="categoryId"  formControlName="categoryId" class="form-control" placeholder="">
+              </div>
+            </div>
+          </div>
+       
+         
+          <div class="row">
+            <div class="col-md-4 pr-1">
+              <div class="form-group">
+                <label>Quantity Per Unit</label>
+                <input type="text"  id="quantityPerUnit" name="quantityPerUnit"  formControlName="quantityPerUnit" class="form-control" placeholder="" value="">
+              </div>
+            </div>
+            <div class="col-md-4 px-1">
+              <div class="form-group">
+                <label>Unit Price</label>
+                <input type="number" id="unitPrice" name="unitPrice"  formControlName="unitPrice"  class="form-control" placeholder="" value="">
+              </div>
+            </div>
+            <div class="col-md-4 pl-1">
+              <div class="form-group">
+                <label>Units In Stock</label>
+                <input type="number"  id="unitsInStock" name="unitsInStock" formControlName="unitsInStock"  class="form-control" placeholder="">
+              </div>
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="update ml-auto mr-auto">
+              <button type="submit" class="btn btn-success btn-round" [disabled]="editForm.invalid">Update Product</button>
+              <button type="submit" routerLink="/product" class="btn btn-outline-danger btn-round" > Back to list</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,103 @@
+
+<div class="form-group d-flex justify-content-between no-border input-group">
+  
+<input [(ngModel)]="filterText" class="form-control col-md-4" id="productName" placeholder="Search...">
+
+<app-category></app-category>
+
+<a routerLink="/productAdd" >    <i class="nc-icon nc-simple-add btn btn-success"></i></a> 
+</div>
+
+<div *ngIf="filterText" class="">
+
+  <small id="emailHelp" class="form-text text-muted">Şu an <span class="badge badge-pill badge-info"> {{filterText}}</span> için sonuçlar listeleniyor</small>
+</div>
+
+
+  <ng-template #noProduct>
+    <div class="alert alert-warning" role="alert">
+      Bu kategoride ürün yoktur
+    </div>
+  </ng-template>
+
+
+  
+  
+
+
+
+
+   
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card">
+      <div class="card-header row">
+        <h4 class="card-title"> Product List</h4>
+    
+      </div>
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-primary">
+              <th>
+                Product Name
+              </th>
+              <th>
+                Category
+              </th>
+              <th>
+                Quantity Per Unit
+              </th>
+              <th >
+                Unit Price
+              </th>
+              <th >
+                Units in Stock
+              </th>
+              <th class="text-right">
+                View Details
+              </th>
+              <th class="text-right">
+                Edit
+              </th>
+              <th class="text-right">
+                Delete
+              </th>
+            </thead>
+            <tbody>
+              <tr  *ngFor="let product of products | productFilter:filterText" >
+                <td>
+                   {{product.productName}}
+                </td>
+                <td>
+                  {{product.categoryId}}
+                </td>
+                <td>
+                  {{product.quantityPerUnit}}
+                </td>
+                <td>
+                  {{product.unitPrice}}
+                </td>
+                <td>
+                  {{product.unitsInStock}}
+                </td>
+                <td class="text-right">
+               <a routerLink="/productDetail/{{product.productId}}" >   <i class="nc-icon nc-zoom-split btn btn-info"></i></a> 
+                </td>
+                <td class="text-right">
+                  <a routerLink="/productEdit/{{product.productId}}" >    <i class="nc-icon nc-refresh-69 btn btn-warning"></i></a> 
+                </td>
+                <td class="text-right">
+                  <a routerLink="/productDelete/{{product.productId}}" >   <i class="nc-icon nc-simple-remove btn btn-danger"></i> </a> 
+                </td>
+              </tr>
+             
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

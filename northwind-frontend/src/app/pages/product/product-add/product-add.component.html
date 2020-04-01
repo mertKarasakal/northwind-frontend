@@ -1,0 +1,59 @@
+
+<div class="col-md-12">
+  <div class="card card-user">
+    <div class="image">
+      <img src="assets/img/m.jpg" alt="...">
+    </div>
+    <div class="card-header">
+      <h5 class="card-title">New product </h5>
+    </div>
+    <div class="card-body">
+      <form [formGroup]="productAddForm" (ngSubmit)="add()">
+        <div class="row">
+          
+          <div class="col-md-4 px-1">
+            <div class="form-group">
+              <label>Product Name</label>
+              <input type="text" formControlName="productName"  class="form-control" placeholder=" " value="">
+            </div>
+          </div>
+          <div class="col-md-4 pl-1">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Category</label>
+              <input type="number"  formControlName="categoryId" class="form-control" placeholder="">
+            </div>
+          </div>
+        </div>
+     
+       
+        <div class="row">
+          <div class="col-md-4 pr-1">
+            <div class="form-group">
+              <label>Quantity Per Unit</label>
+              <input type="text"  formControlName="quantityPerUnit" class="form-control" placeholder="" value="">
+            </div>
+          </div>
+          <div class="col-md-4 px-1">
+            <div class="form-group">
+              <label>Unit Price</label>
+              <input type="number" formControlName="unitPrice"  class="form-control" placeholder="" value="">
+            </div>
+          </div>
+          <div class="col-md-4 pl-1">
+            <div class="form-group">
+              <label>Units In Stock</label>
+              <input type="number" formControlName="unitsInStock"  class="form-control" placeholder="">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="update ml-auto mr-auto">
+            <button type="submit" class="btn btn-success btn-round" [disabled]="productAddForm.invalid">Add Product</button>
+            <button type="submit" routerLink="/product" class="btn btn-outline-danger btn-round" > Back to list</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
